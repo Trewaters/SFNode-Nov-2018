@@ -3,7 +3,7 @@ SFNode meetup talk (November 2018)
 Intro
 Security is a philosophy you follow or you don’t. Security through obfuscation doesn’t count as security. The Node.js community relies on you to keep it safe.
 
-# H1
+# Threats by category, Top 10 Threats 2017
 -	A1: Injection
   -Solution: make sure to validate the data somehow. 
   -Prevent query injection vulnerabilities

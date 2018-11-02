@@ -4,11 +4,11 @@ SFNode meetup talk (November 2018)
 Security happens in layers. Nodejs is part of an ecosystem. There are many tools that will help you code quickly but still remain secure. Just because you add security doesn't mean vulnerabilities disappear. Good security should give you more time to time to react to active threats.
 
 # Security in Layers, the ecosystem
-- Point out OWASP, and they have a meetup in our region also
-  - The “Open Web Application Security” (OWASP)
-  - website ( https://www.owasp.org/ )
-  - meetup in SF Bay Area ( https://www.meetup.com/Bay-Area-OWASP/ )
-  - on Twitter too ( https://twitter.com/owasp )
+- ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/owasplogo.png "OWASP Logo") OWASP, and they have a meetup in our region also
+  - The “Open Web Application Security Project” (OWASP)
+  - official website ( https://www.owasp.org/ )
+  - meetups in SF Bay Area ( https://www.meetup.com/Bay-Area-OWASP/ )
+  - Twitter ( https://twitter.com/owasp )
 - npm has security features everyone should know about
   - Security Audits in npm. the docs are here ( https://docs.npmjs.com/getting-started/running-a-security-audit )
   - 2fa on packages. the docs are here ( https://docs.npmjs.com/getting-started/using-two-factor-authentication ). 

@@ -30,9 +30,6 @@ Security happens in layers. Nodejs is part of an ecosystem. There are many tools
   - Long-Term Support (LTS) will support Nodejs and patches security flaws as they are discovered. 
   - Please use even number Nodejs releases for enterprise applications. Even number realeases are supported under LTS. Which is 3 years from Current release to EOL.
   - Bug fixes, security updates, non-semver-major npm updates
-  - Node 6.x  EOL scheduled for April 2019
-  - Node 10.x EOL scheduled for April 2021
-  - Node 11.x EOL scheduled for June 2019
   - do not use End of Life (EOL) versions because there is no support even if there is a known security vulnerability.
   - note odd number releases will be EOL once the next major “SemVer” realeases
 
@@ -40,9 +37,9 @@ Security happens in layers. Nodejs is part of an ecosystem. There are many tools
 - Semantic Versioning ( SemVer )
   - ( https://semver.org/ )
   - Given a version number MAJOR.MINOR.PATCH, increment the:
-   - MAJOR version when you make incompatible API changes,
-   - MINOR version when you add functionality in a backwards-compatible manner, and
-   - PATCH version when you make backwards-compatible bug fixes.
+   * MAJOR version when you make incompatible API changes,
+   * MINOR version when you add functionality in a backwards-compatible manner, and
+   * PATCH version when you make backwards-compatible bug fixes.
   - Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
 - Node.js Vulnerability Disclosure

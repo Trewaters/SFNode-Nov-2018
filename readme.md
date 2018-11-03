@@ -1,34 +1,34 @@
 SFNode meetup talk (November 2018)
 
 # Intro
-Security happens in layers. Nodejs is part of an ecosystem. There are many tools that will help you code quickly but still remain secure. Just because you add security doesn't mean vulnerabilities disappear. Good security should give you more time to time to react to active threats.
+Security happens in layers. Node.js is part of an ecosystem. There are many tools that will help you code quickly but still remain secure. Just because you add security doesn't mean vulnerabilities disappear. Good security should give you more time to react and counter active attacks.
 
 # Security in Layers, the ecosystem
 ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/owasplogo.png "OWASP Logo") 
 - OWASP is  a public group focused on security
   - The “Open Web Application Security Project” (OWASP)
-  - official website ( https://www.owasp.org/ )
-  - meetups in SF Bay Area ( https://www.meetup.com/Bay-Area-OWASP/ )
-  - Twitter ( https://twitter.com/owasp )
+  - Their official website ( https://www.owasp.org/ )
+  - OWASP meetups in San Francisco Bay Area ( https://www.meetup.com/Bay-Area-OWASP/ )
+  - OWASP Twitter ( https://twitter.com/owasp )
 
 ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/200px-Npm-logo.svg.png "npm logo")
 - npm has security features everyone should know about
-  - Security Audits in npm. the docs are here ( https://docs.npmjs.com/getting-started/running-a-security-audit )
-  - 2fa on packages. the docs are here ( https://docs.npmjs.com/getting-started/using-two-factor-authentication ). 
-  - use One Time Password Generators (Authy, Google Authenticator)
-  - important to research how-to backup/recover your OTP and 2fa
-  - 2fa works in yarn
+  - There are automatic security Audits in npm. Act on the audits with `npm audit fix` or `npm audit fix --force`. Read the docs found here ( https://docs.npmjs.com/getting-started/running-a-security-audit )
+  - Enable Two Factor Authentication (2fa). Read the docs found here ( https://docs.npmjs.com/getting-started/using-two-factor-authentication ). 
+  1. For 2fa you will need to use a One Time Password (OTP) Generators ([Authy](https://authy.com/), [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en_US), not sure if it works with [Microsoft Authenticator](https://www.microsoft.com/en-us/account/authenticator))
+  2. It is **important** to research how-to backup/recover your OTP and 2fa. Just in case something happens to the device that you have the application installed on.
+  - npm 2fa works with yarn
 
 - Linter security rules
-  - source ( https://github.com/i0natan/nodebestpractices/blob/master/sections/security/lintrules.md )
-  - we have tools let’s use them. These security plugins will help you avoid vulnerable patterns.
-  - TSLint ( https://www.npmjs.com/package/tslint-config-security )
-  - ESLint ( https://github.com/nodesecurity/eslint-plugin-security )
+  - Source article for more details ( https://github.com/i0natan/nodebestpractices/blob/master/sections/security/lintrules.md )
+  - we have tools let’s use them. These security plugins will help you avoid vulnerable coding patterns.
+  - TSLint security plugin found here ( https://www.npmjs.com/package/tslint-config-security )
+  - ESLint security plugin found here ( https://github.com/nodesecurity/eslint-plugin-security )
 
-![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/release%20working%20group%20schedule.png "Nodejs release schedule")
-- Nodejs Security Patches
-  - Long-Term Support (LTS) will support Nodejs and patches security flaws as they are discovered. 
-  - Please use even number Nodejs releases for enterprise applications. Even number realeases are supported under LTS. Which is 3 years from Current release to EOL.
+![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/release%20working%20group%20schedule.png "Node.js release schedule")
+- Node.js Security Patches
+  - Long-Term Support (LTS) will support Node.js with patches to security flaws as they are discovered. 
+  - Please use even number Node.js releases for enterprise applications. Even number realeases are supported under LTS. Which is 3 years from Current release to EOL.
   - Bug fixes, security updates, non-semver-major npm updates
   - do not use End of Life (EOL) versions because there is no support even if there is a known security vulnerability.
   - note odd number releases will be EOL once the next major “SemVer” realeases
@@ -37,14 +37,14 @@ Security happens in layers. Nodejs is part of an ecosystem. There are many tools
 - Semantic Versioning ( SemVer )
   - ( https://semver.org/ )
   - Given a version number MAJOR.MINOR.PATCH, increment the:
-   * MAJOR version when you make incompatible API changes,
-   * MINOR version when you add functionality in a backwards-compatible manner, and
-   * PATCH version when you make backwards-compatible bug fixes.
+   - MAJOR version when you make incompatible API changes,
+   - MINOR version when you add functionality in a backwards-compatible manner, and
+   - PATCH version when you make backwards-compatible bug fixes.
   - Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
 - Node.js Vulnerability Disclosure
   - “If you See something Say something”
-  - report issues by email ( security@nodejs.org ), or here at hackerone ( https://hackerone.com/nodejs ). Read the main bug page for nodejs ( https://nodejs.org/en/security/ ).
+  - report issues by email ( security@nodejs.org ), or here at hackerone ( https://hackerone.com/nodejs ). Read the main bug page for Node.js ( https://nodejs.org/en/security/ ).
   - There are bug bounties too, just another incentive to do the right thing
   - security.md file in all repos is a proposed standard. Security disclosure policy for packages.
     - read more about the guidelines here ( https://github.com/securitytxt/security-txt )

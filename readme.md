@@ -25,10 +25,10 @@ Security happens in layers. Node.js is part of an ecosystem. There are many tool
   - TSLint security plugin found here ( https://www.npmjs.com/package/tslint-config-security )
   - ESLint security plugin found here ( https://github.com/nodesecurity/eslint-plugin-security )
 
-![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/release%20working%20group%20schedule.png "Node.js release schedule")
 - Node.js Security Patches
   - Long-Term Support (LTS) will support Node.js with patches to security flaws as they are discovered. 
   - Please use even number Node.js releases for enterprise applications. Even number realeases are supported under LTS. Which is 3 years from Current release to EOL.
+  ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/release%20working%20group%20schedule.png "Node.js release schedule")
   - Bug fixes, security updates, non-semver-major npm updates
   - do not use End of Life (EOL) versions because there is no support even if there is a known security vulnerability.
   - note odd number releases will be EOL once the next major “SemVer” realeases

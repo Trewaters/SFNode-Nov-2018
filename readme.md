@@ -3,7 +3,7 @@ SFNode meetup talk (November 2018)
 # Intro
 Security happens in layers. Node.js is part of an ecosystem. There are many tools that will help you code quickly but still remain secure. Just because you add security doesn't mean vulnerabilities disappear. Good security should give you more time to react and counter active attacks.
 
-# Security in Layers, the ecosystem
+# Security happens in Layers, the ecosystem
 ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/owasplogo.png "OWASP Logo") 
 - OWASP is  a public group focused on security
   - The “Open Web Application Security Project” (OWASP)
@@ -27,11 +27,11 @@ Security happens in layers. Node.js is part of an ecosystem. There are many tool
 
 - Node.js Security Patches
   - Long-Term Support (LTS) will support Node.js with patches to security flaws as they are discovered. 
-  - Please use even number Node.js releases for enterprise applications. Even number realeases are supported under LTS. Which is 3 years from Current release to EOL.
+  - Please use even number Node.js releases for enterprise applications. Even number realeases are supported under LTS. Which last 3 years from Current release to End of Life (EOL).
   ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/release%20working%20group%20schedule.png "Node.js release schedule")
   - Bug fixes, security updates, non-semver-major npm updates
-  - do not use End of Life (EOL) versions because there is no support even if there is a known security vulnerability.
-  - note odd number releases will be EOL once the next major “SemVer” realeases
+  - do not use EOL versions of Node.js because there is no support. Even if there is a known security vulnerability it will not be patched in EOL.
+  - note odd number releases will be EOL once the next major “SemVer” realease.
 
 ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/semver.png "Semantic Versioning")
 - Semantic Versioning ( SemVer )
@@ -40,24 +40,28 @@ Security happens in layers. Node.js is part of an ecosystem. There are many tool
    - MAJOR version when you make incompatible API changes,
    - MINOR version when you add functionality in a backwards-compatible manner, and
    - PATCH version when you make backwards-compatible bug fixes.
-  - Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
 - Node.js Vulnerability Disclosure
-  - “If you See something Say something”
-  - report issues by email ( security@nodejs.org ), or here at hackerone ( https://hackerone.com/nodejs ). Read the main bug page for Node.js ( https://nodejs.org/en/security/ ).
-  - There are bug bounties too, just another incentive to do the right thing
-  - security.md file in all repos is a proposed standard. Security disclosure policy for packages.
+  - *“If you See something Say something”*
+  - Report issues by email ( security@nodejs.org )
+  - or use Hackerone ( https://hackerone.com/nodejs )
+  - Read the main bug page for Node.js ( https://nodejs.org/en/security/ )
+  - There are bug bounties too $$, another incentive to do the right thing
+  - *"Security.md"* file should be added to all your repos from now on. I am recommending this as a **new standard**. Security disclosure policy for packages.
     - read more about the guidelines here ( https://github.com/securitytxt/security-txt )
 
-- Node Security Roadmap from Google ( https://nodesecroadmap.fyi/ )
+- Node Security Roadmap from *Google* ( https://nodesecroadmap.fyi/ )
 
+![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/snyk-logo.png "Snyk Logo")
 - Constantly and automatically inspect for vulnerable dependencies
-  - use things like npm audit, nsp, or [snyk](https://github.com/snyk/)
+  - use apps like [npm audit](https://docs.npmjs.com/getting-started/running-a-security-audit), or [snyk](https://github.com/snyk/)
 
+![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/nodegoat.png "NodeGoat")
 - NodeGoat
   - ( https://github.com/OWASP/NodeGoat )
-  - OWASP initiative
-  - app that can be exploited. They also guide devs in ways to fix the issues/vulnerabilities.
+  - NodeGoat is an OWASP initiative
+  - This app can be exploited. It also guides for devs about ways to fix the issues/vulnerabilities that are in it.
+  - Meant to be deployed to Heroku.
 
 - use `npm-check` to see if modules are out of date. 
   - ( https://www.npmjs.com/package/npm-check )

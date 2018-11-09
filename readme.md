@@ -26,15 +26,15 @@ Security happens in layers. Node.js is part of an ecosystem. There are many tool
   - ESLint security plugin found here ( https://github.com/nodesecurity/eslint-plugin-security )
 
 - Node.js Security Patches
-  - Long-Term Support (LTS) will support Node.js with patches to security flaws as they are discovered. 
   - Please use even number Node.js releases for enterprise applications. Even number realeases are supported under LTS. Which last 3 years from Current release to End of Life (EOL).
   ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/release%20working%20group%20schedule.png "Node.js release schedule")
+  - Long-Term Support (LTS) will support Node.js with patches to security flaws as they are discovered. 
   - Bug fixes, security updates, non-semver-major npm updates
-  - do not use EOL versions of Node.js because there is no support. Even if there is a known security vulnerability it will not be patched in EOL.
-  - note odd number releases will be EOL once the next major “SemVer” realease.
+  - Please do not use EOL versions of Node.js because there is no support. Even if there is a known security vulnerability it will not be patched in EOL versions.
+  - note odd number releases will be EOL once the next major “SemVer” is realeased.
 
-![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/semver.png "Semantic Versioning")
 - Semantic Versioning ( SemVer )
+![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/semver.png "Semantic Versioning")
   - ( https://semver.org/ )
   - Given a version number MAJOR.MINOR.PATCH, increment the:
    - MAJOR version when you make incompatible API changes,
@@ -43,14 +43,11 @@ Security happens in layers. Node.js is part of an ecosystem. There are many tool
 
 - Node.js Vulnerability Disclosure
   - *“If you See something Say something”*
-  - Report issues by email ( security@nodejs.org )
-  - or use Hackerone ( https://hackerone.com/nodejs )
-  - Read the main bug page for Node.js ( https://nodejs.org/en/security/ )
-  - There are bug bounties too $$, another incentive to do the right thing
-  - *"Security.md"* file should be added to all your repos from now on. I am recommending this as a **new standard**. Security disclosure policy for packages.
-    - read more about the guidelines here ( https://github.com/securitytxt/security-txt )
-
-- Node Security Roadmap from *Google* ( https://nodesecroadmap.fyi/ )
+  - Report Node.js issues by email ( security@nodejs.org )
+  - Or use Hackerone Bug Bounty Progam ( https://hackerone.com/nodejs )
+  - Read the main bug page for Node.js security details ( https://nodejs.org/en/security/ )
+  - [*"Security.md"*](https://github.com/Trewaters/security-README/blob/master/security.md) security ReadMe file should be added to all open source repos. This ReadMe contains security disclosure policy and responsible disclosure practice. I am recommending this as a **new standard**. Read more here (https://3waters.org/?p=250&preview=true)
+  - Node Security Roadmap from *Google* ( https://nodesecroadmap.fyi/ )
 
 ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/snyk-logo.png "Snyk Logo")
 - Constantly and automatically inspect for vulnerable dependencies

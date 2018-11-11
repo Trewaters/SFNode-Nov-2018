@@ -32,6 +32,7 @@ Security happens in layers. Node.js is part of an ecosystem. There are many tool
   - Bug fixes, security updates, non-semver-major npm updates
   - Please do not use EOL versions of Node.js because there is no support. Even if there is a known security vulnerability it will not be patched in EOL versions.
   - note odd number releases will be EOL once the next major “SemVer” is realeased.
+  - Node Security Roadmap from *Google* ( https://nodesecroadmap.fyi/ )
 
 - Semantic Versioning ( SemVer )
 ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/semver.png "Semantic Versioning")
@@ -47,11 +48,6 @@ Security happens in layers. Node.js is part of an ecosystem. There are many tool
   - Or use Hackerone Bug Bounty Progam ( https://hackerone.com/nodejs )
   - Read the main bug page for Node.js security details ( https://nodejs.org/en/security/ )
   - [*"Security.md"*](https://github.com/Trewaters/security-README/blob/master/security.md) security ReadMe file should be added to all open source repos. This ReadMe contains security disclosure policy and responsible disclosure practice. I am recommending this as a **new standard**. Read more here (https://3waters.org/?p=250&preview=true)
-  - Node Security Roadmap from *Google* ( https://nodesecroadmap.fyi/ )
-
-![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/snyk-logo.png "Snyk Logo")
-- Constantly and automatically inspect for vulnerable dependencies
-  - use apps like [npm audit](https://docs.npmjs.com/getting-started/running-a-security-audit), or [snyk](https://github.com/snyk/)
 
 ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/nodegoat.png "NodeGoat")
 - NodeGoat
@@ -60,13 +56,12 @@ Security happens in layers. Node.js is part of an ecosystem. There are many tool
   - This app can be exploited. It also guides for devs about ways to fix the issues/vulnerabilities that are in it.
   - Meant to be deployed to Heroku.
 
-- use `npm-check` to see if modules are out of date. 
-  - ( https://www.npmjs.com/package/npm-check )
-  - Looks a little different than npm-audit
-
-- scan your app for easy to find issues
-  - NodeJsScan ( https://github.com/ajinabraham/NodeJsScan )
-  - mainly regex style attacks
+  ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/snyk-logo.png "Snyk Logo")
+- scan your application code constantly and automatically to inspect for vulnerabilities with tools like:
+  - [npm audit](https://docs.npmjs.com/getting-started/running-a-security-audit), 
+  - [snyk](https://github.com/snyk/), 
+  - [NodeJsScan] ( https://github.com/ajinabraham/NodeJsScan ),
+  - [`npm-check`](https://www.npmjs.com/package/npm-check) which is different than `npm audit fix`
 
 # Threats by category, Top 10 Threats 2017
 ### A1: Injection

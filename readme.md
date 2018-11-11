@@ -140,6 +140,7 @@ on YouTube ( https://youtu.be/JdGOb7AxUo0 )
 
 
 ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/Hostile-user-itCrowd.gif "hostile users")
+
 *User input is a major vulnerability, please treat it like hostile code and sanitize it. Filter and validate user input.*
 
 # Threats in the Wild

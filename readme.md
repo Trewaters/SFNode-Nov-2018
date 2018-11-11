@@ -49,7 +49,7 @@ Security happens in layers. Node.js is part of an ecosystem. There are many tool
   - Read the main bug page for Node.js security details ( https://nodejs.org/en/security/ )
   - [*"Security.md"*](https://github.com/Trewaters/security-README/blob/master/security.md) security ReadMe file should be added to all open source repos. This ReadMe contains security disclosure policy and responsible disclosure practice. I am recommending this as a **new standard**. Read more here (https://3waters.org/?p=250&preview=true)
 
-  ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/images/nodegoat.png "NodeGoat")
+  ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/tree/master/images/nodegoat.png "NodeGoat")
 - NodeGoat
   - ( https://github.com/OWASP/NodeGoat )
   - NodeGoat is an OWASP initiative

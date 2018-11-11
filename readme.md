@@ -130,18 +130,17 @@ on YouTube ( https://youtu.be/JdGOb7AxUo0 )
 ### [A10: Insufficient Logging and Monitoring](https://www.owasp.org/index.php/Top_10-2017_A10-Insufficient_Logging%26Monitoring "click for more info")
   - *"tl;dr" Solution: read the logs for unusual activity.*
   - use due diligence. Check logs, write scripts, use things like [linkerd](https://linkerd.io/) or [splunk](https://www.splunk.com/) to monitor possible intrusions.
--	DDOS
+
+###	DDOS
   - Limit concurrent requests using a middleware
     - cloud load balancers, firewalls
     - `express-rate-limit` ( https://www.npmjs.com/package/express-rate-limit )
   - Avoid DOS attacks by explicitly setting when a process should crash
   - Prevent RegEx from overloading your single thread execution
 
--	User input is a major vulnerability, please treat it like hostile code and sanitize it. Filter and validate user input.
+
 ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/Hostile-user-itCrowd.gif "hostile users")
--	node-html-entities
-  - ( https://www.npmjs.com/package/html-entities )
-  - not quite sure what this is but it has 2M downloads/week
+*User input is a major vulnerability, please treat it like hostile code and sanitize it. Filter and validate user input.*
 
 # Threats in the Wild
 - Electron exploit

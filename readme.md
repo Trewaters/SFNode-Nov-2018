@@ -50,8 +50,7 @@ Security happens in layers. Node.js is part of an ecosystem. There are many tool
   - [*"Security.md"*](https://github.com/Trewaters/security-README/blob/master/security.md) security ReadMe file should be added to all open source repos. This ReadMe contains security disclosure policy and responsible disclosure practice. I am recommending this as a **new standard**. Read more here (https://3waters.org/?p=250&preview=true)
 
   ![alt text](images/nodegoat.png "NodeGoat")
-- NodeGoat
-  - ( https://github.com/OWASP/NodeGoat )
+- [NodeGoat](https://github.com/OWASP/NodeGoat)
   - NodeGoat is an OWASP initiative
   - This app can be exploited. It also guides for devs about ways to fix the issues/vulnerabilities that are in it.
   - Meant to be deployed to Heroku.
@@ -135,7 +134,7 @@ Security happens in layers. Node.js is part of an ecosystem. There are many tool
 - Electron exploit (**THIS IS WHAT GAVE ME THE IDEA FOR THE TALK**)
   - This exploit was fixed in Electron version 2 so upgrade this dependency.
   -	Electron also [list other security recommendations](https://github.com/electron/electron/blob/master/docs/tutorial/security.md)
-- CVE Details ["Common Vulnerabilities and Exploits"]( https://www.cvedetails.com/vulnerability-list/vendor_id-12113/Nodejs.html )
+- CVE Details ["Common Vulnerabilities and Exploits"](https://www.cvedetails.com/vulnerability-list/vendor_id-12113/Nodejs.html)
 - "Reverse Shell" exploit
   - This has been patched and it is very specific. There is an interesting [article on it here](https://wiremask.eu/writeups/reverse-shell-on-a-nodejs-application/)
 

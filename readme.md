@@ -60,69 +60,58 @@ Security happens in layers. Node.js is part of an ecosystem. There are many tool
 - scan your application code constantly and automatically to inspect for vulnerabilities with tools like:
   - [npm audit](https://docs.npmjs.com/getting-started/running-a-security-audit)
   - [snyk](https://github.com/snyk/)
-  - [NodeJsScan] ( https://github.com/ajinabraham/NodeJsScan )
+  - [NodeJsScan](https://github.com/ajinabraham/NodeJsScan)
   - [`npm-check`](https://www.npmjs.com/package/npm-check) which is different than `npm audit fix`
 
 # Threats by category, [Top 10 Threats 2017](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)
 ### [A1: Injection](https://www.owasp.org/index.php/Top_10-2017_A1-Injection "click for more info")
   - *"tl;dr" Solution: make sure to validate the data you get from users.* 
-  - Prevent query injection vulnerabilities
-    - ORM/ODM libraries like Mongoose have this feature
-    - “Node.js Applicative DoS Through MongoDB Injection” 
-   by Vladimir de Turckheim, 
-   on YouTube ( https://youtu.be/xJWZsoYmsIE )
+  - Prevent query injection vulnerabilities by using ORM/ODM libraries like Mongoose have this feature. Below is an video of an academic example of this vulnerability.
+    - **“Node.js Applicative DoS Through MongoDB Injection”** [on YouTube](https://youtu.be/xJWZsoYmsIE), by [Vladimir de Turckheim](https://twitter.com/poledesfetes)
   - Avoid JavaScript `eval` statements and `new Function`
   - Avoid module loading `require(someVariable)` using a variable
 ### [A2: Broken Authentication](https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication "click for more info")
   - *"tl;dr" Solution: use 2fa whenever possible.*
-  - Avoid using the Node.js crypto library for handling passwords, use Bcrypt
-    - use bcrypt ( https://www.npmjs.com/package/bcrypt )
-    - I am curious what is wrong with the crypto library
-    - Thomas Hunter II has written articles about this too ( https://medium.com/intrinsic/common-node-js-attack-vectors-the-dangers-of-malicious-modules-863ae949e7e8 )
-  - Support blacklisting JWT tokens
-    - JWTs Suck (and are stupid), 
-by Randall Degges, 
-slides here ( https://speakerdeck.com/rdegges/jwts-suck-and-are-stupid ),
-on YouTube ( https://youtu.be/JdGOb7AxUo0 )
-  - Limit the allowed login request of each user
-    - use express-brute ( https://www.npmjs.com/package/express-brute )
+  - Avoid using the Node.js crypto library for handling passwords because it is too predictable. Instead use [bcrypt](https://www.npmjs.com/package/bcrypt)
+    - [Thomas Hunter II](https://twitter.com/tlhunter) wrote about this in **["The Dangers of Malicious Modules"]**(https://medium.com/intrinsic/common-node-js-attack-vectors-the-dangers-of-malicious-modules-863ae949e7e8)
+  - Support blacklisting and expiring JWT tokens.
+    - I highly suggest this talk **JWTs Suck (and are stupid)**, by [Randall Degges](https://twitter.com/rdegges), [slides here](https://speakerdeck.com/rdegges/jwts-suck-and-are-stupid), and on [YouTube](https://youtu.be/JdGOb7AxUo0).
+  - Limit the allowed login request of each user by using [express-brute](https://www.npmjs.com/package/express-brute).
 ### [A3: Sensitive Data Exposure](https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure "click for more info")
   - *"tl;dr" Solution: encrypt sensitive data.*
   - Extract secrets from config files or use packages to encrypt them
-    - use environment variables for this
-    - use `cryptr` ( https://www.npmjs.com/package/cryptr )
+    - Pass secrets wtih environment variables and save the secrets in a file on your server.
+    - use [`cryptr`](https://www.npmjs.com/package/cryptr)
 ### [A4: External Entities](https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE) "click for more info")
   - *"tl;dr" Solution: use JSON and avoid serializing sensitive data.*
   - Run unsafe code in a sandbox
     - use a dedicated child process
     - use a cloud serverless framework
-    - use libraries like sandbox or vm2
- -	https://www.npmjs.com/package/sandbox
- -	https://www.npmjs.com/package/vm2 
+    - use libraries like [sandbox](https://www.npmjs.com/package/sandbox) or [vm2](https://www.npmjs.com/package/vm2) 
   - Take extra care when working with child processes
-    - use `child_process.execFile` if you are unsure but need to use it
+    - use the `child_process.execFile` if you are unsure
 ### [A5: Broken Access Control](https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control "click for more info")
   - *"tl;dr" Solution: deny access by default.*
   - Run Node.js as non-root user
 ### [A6: Security Misconfiguration](https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration "click for more info")
   - *"tl;dr" Solution: review default settings to secure installation.*
   - Adjust the HTTP response headers for enhanced security
-    - use helmet for express servers ( https://www.npmjs.com/package/helmet )
+    - use [helmet](https://www.npmjs.com/package/helmet) to protect express servers 
   - Hide error details from clients
     - set `NODE_ENV` to `production`
-  - Modify session middleware settings
+  - Modify session middleware settings, don't use the defaults.
 ### [A7: Cross-Site Scripting (XSS)](https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS) "click for more info")
   - *"tl;dr" Solution: separate untrusted data from browser content.*
   - Escape HTML, JS, and CSS output
-    - use escape-html ( https://github.com/component/escape-html )
-    - use node-esapi ( https://github.com/ESAPI/node-esapi )
+    - use [escape-html](https://github.com/component/escape-html)
+    - use [node-esapi](https://github.com/ESAPI/node-esapi)
 ### [A8: Insecure Deserialization](https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization "click for more info")
   - *"tl;dr" Solution: no serialized data from untrusted sources.*
   - Validate incoming JSON schemas
-    - use jsonschema ( https://www.npmjs.com/package/jsonschema )
-    - use joi ( https://www.npmjs.com/package/joi )
+    - use [jsonschema](https://www.npmjs.com/package/jsonschema)
+    - use [joi](https://www.npmjs.com/package/joi)
    - Limit payload size using a reverse proxy or middleware.
-    - configure express body parser to accept only small-size payloads
+    - configure express [bodyparser](https://github.com/expressjs/body-parser) to accept small-size payloads
 ### [A9: Using Components with Known Vulnerabilities](https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities "click for more info")
   - *"tl;dr" Solution: institute patch management process.*
   - [`npm audit fix`](https://docs.npmjs.com/getting-started/running-a-security-audit)
@@ -132,11 +121,10 @@ on YouTube ( https://youtu.be/JdGOb7AxUo0 )
   - use due diligence. Check logs, write scripts, use things like [linkerd](https://linkerd.io/) or [splunk](https://www.splunk.com/) to monitor possible intrusions.
 
 ###	DDOS
-  - Limit concurrent requests using a middleware
-    - cloud load balancers, firewalls
-    - `express-rate-limit` ( https://www.npmjs.com/package/express-rate-limit )
+  - Limit concurrent requests using a middleware. Cloud load balancers and firewalls can be configured to help with this.
+    - use [`express-rate-limit`](https://www.npmjs.com/package/express-rate-limit)
   - Avoid DOS attacks by explicitly setting when a process should crash
-  - Prevent RegEx from overloading your single thread execution
+  - Prevent RegEx from overloading your single thread execution with an overly complex query.
 
 
 ![alt text](https://github.com/Trewaters/SFNode-Nov-2018/blob/master/images/Hostile-user-itCrowd.gif "hostile users")
@@ -144,14 +132,12 @@ on YouTube ( https://youtu.be/JdGOb7AxUo0 )
 *User input is a major vulnerability, please treat it like hostile code and sanitize it. Filter and validate user input.*
 
 # Threats in the Wild
-- Electron exploit
-  - see if it is still an issue. Fixed in Electron version 2
-  -	https://github.com/electron/electron/blob/master/docs/tutorial/security.md
-  - THIS IS WHAT GAVE ME THE IDEA FOR THE TALK
-- CVE Details – a website I ran across during my research of Node.Js vulnerabilities
-  - ( https://www.cvedetails.com/vulnerability-list/vendor_id-12113/Nodejs.html )
-- Reverse Shell
-  - patched and specific but interesting article on it here ( https://wiremask.eu/writeups/reverse-shell-on-a-nodejs-application/ )
+- Electron exploit (**THIS IS WHAT GAVE ME THE IDEA FOR THE TALK**)
+  - This exploit was fixed in Electron version 2 so upgrade this dependency.
+  -	Electron also [list other security recommendations](https://github.com/electron/electron/blob/master/docs/tutorial/security.md)
+- CVE Details ["Common Vulnerabilities and Exploits"]( https://www.cvedetails.com/vulnerability-list/vendor_id-12113/Nodejs.html )
+- "Reverse Shell" exploit
+  - This has been patched and it is very specific. There is an interesting [article on it here](https://wiremask.eu/writeups/reverse-shell-on-a-nodejs-application/)
 
 # Acknowledgements
 - “i0natan” - Their GitHub site with a list of security best practices ( https://github.com/i0natan/nodebestpractices ).

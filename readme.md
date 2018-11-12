@@ -72,7 +72,7 @@ Security happens in layers. Node.js is part of an ecosystem. There are many tool
 ### [A2: Broken Authentication](https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication "click for more info")
   - *"tl;dr" Solution: use 2fa whenever possible.*
   - Avoid using the Node.js crypto library for handling passwords because it is too predictable. Instead use [bcrypt](https://www.npmjs.com/package/bcrypt)
-    - [Thomas Hunter II](https://twitter.com/tlhunter) wrote about this in **[The Dangers of Malicious Modules]**(https://medium.com/intrinsic/common-node-js-attack-vectors-the-dangers-of-malicious-modules-863ae949e7e8)
+    - [Thomas Hunter II](https://twitter.com/tlhunter) wrote about this in [The Dangers of Malicious Modules](https://medium.com/intrinsic/common-node-js-attack-vectors-the-dangers-of-malicious-modules-863ae949e7e8)
   - Support blacklisting and expiring JWT tokens.
     - I highly suggest this talk **JWTs Suck (and are stupid)**, by [Randall Degges](https://twitter.com/rdegges), [slides here](https://speakerdeck.com/rdegges/jwts-suck-and-are-stupid), and on [YouTube](https://youtu.be/JdGOb7AxUo0).
   - Limit the allowed login request of each user by using [express-brute](https://www.npmjs.com/package/express-brute).
